@@ -24,6 +24,7 @@ import * as CodeMirror from 'codemirror'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
+import 'codemirror/addon/edit/closetag.js'
 // import 'codemirror/mode/xml/xml.js'
 
 var model = {
@@ -44,17 +45,20 @@ export default {
       lineNumbers: true,
       theme: 'dracula',
       mode: 'javascript',
+      tabSize: 2,
+      autoCloseTags: true,
     });
-    var scope = this;
-    this.editor.on('change', function(cm) {
-      scope.model = cm.getValue();
-    });
+    //var scope = this;
+    // this.editor.on('change', function(cm) {
+    //   scope.model = cm.getValue();
+    // });
+  
   },
   methods: {
     addMessage(){
       // let jsCode = this.editor.getValue();
+      let jsCode = '<scri' + 'pt>' + this.editor.getValue() + '</scr' + 'ipt>';
       let preview = document.querySelector("#preview").contentWindow.document;
-      let jsCode = '<scri' + 'pt>' + this.editor.getValue(); + '</scr' + 'ipt>';
       preview.open();
       preview.write(jsCode);
       preview.close();

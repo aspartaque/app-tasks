@@ -9,13 +9,13 @@
           <li @click="activate(3)" :class="{ 'active' : isActive === 3 }">tab 3</li>
         </ul>
         <ul class="tab__content">
-          <li v-if="isActive === 1">
+          <li v-show="isActive === 1">
             <CodeMirror/>
           </li>
-          <li v-else-if="isActive === 2">
+          <li v-show="isActive === 2">
             <Colors/>
           </li>
-          <li v-else-if="isActive === 3">Tab text 3</li>
+          <li v-show="isActive === 3">Tab text 3</li>
         </ul>
       </div>
     </div>
