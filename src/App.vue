@@ -15,7 +15,9 @@
           <li v-show="isActive === 2">
             <Colors/>
           </li>
-          <li v-show="isActive === 3">Tab text 3</li>
+          <li v-show="isActive === 3">
+            <DragAndDrop/>
+          </li>
         </ul>
       </div>
     </div>
@@ -28,12 +30,14 @@
 <script>
 import CodeMirror from './components/CodeMirror.vue'
 import Colors from './components/Colors.vue'
+import DragAndDrop from './components/DragAndDrop.vue'
 
 export default {
   name: 'App',
   components: {
     CodeMirror,
-    Colors
+    Colors,
+    DragAndDrop
   },
   data() {
     return {
